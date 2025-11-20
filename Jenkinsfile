@@ -8,7 +8,7 @@ pipeline {
      PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
            JAVA_HOME = 'C:\\Program Files\\Java\\jdk-21'  // Adjust to your actual JDK pat
         SONARQUBE_SERVER = 'SonarQubeServer'  // The name of the SonarQube server configured in Jenkins
-        SONAR_TOKEN = 'squ_8b94aa86038ad3117376ed73259669896efcc664' // Store the token securely
+        SONAR_TOKEN = 'squ_c6804105983ff1e6ea605cacfd3cd714532e2aaf' // Store the token securely
         DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
         DOCKERHUB_REPO = 'tarunip/sonarqubejenkins'
         DOCKER_IMAGE_TAG = 'latest'
@@ -38,7 +38,7 @@ pipeline {
                                 -Dsonar.sources=src ^
                                 -Dsonar.projectName=DevOps-Demo ^
                                 -Dsonar.host.url=http://localhost:9000 ^
-                                -Dsonar.login=${env.SONAR_TOKEN} ^
+                                -Dsonar.token=${env.SONAR_TOKEN} ^
                                 -Dsonar.java.binaries=target/classes
                             """
                         }
